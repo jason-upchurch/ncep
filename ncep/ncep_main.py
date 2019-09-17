@@ -48,10 +48,10 @@ map compare average temps
 '''
 fname2 = 'compare_average_temps'
 savepath = False
-date_start = datetime(2019,7,4).date()
-date_end = datetime(2019,7,4).date()
-date_start_compare = datetime(2018,7,4).date()
-date_end_compare = datetime(2018,7,4).date()
+date_start = datetime(2018,1,1).date()
+date_end = datetime(2018,1,1).date()
+date_start_compare = datetime(2014,1,7).date()
+date_end_compare = datetime(2014,1,7).date()
 plt_compare = ncep_mapping.map_compare_average_temps(date_start, date_end, date_start_compare, date_end_compare,
                 '', how='stcd',legend = True)
 plt_compare.show()
