@@ -3,11 +3,11 @@
 ### A paritial list of system requirements
 - Python version 3.7.x
 - [PROJ](https://proj.org/install.html)
-  - On Debian:
+  - On Debian/Ubuntu:
     - `sudo apt-get install proj-bin`
     - `sudo apt-get install libproj-dev`
 - [GEOS](https://trac.osgeo.org/geos/)
-  - On Debian:
+  - On Debian/Ubuntu:
     - `sudo apt-get install libgeos-dev`
 
 ### Project installation
