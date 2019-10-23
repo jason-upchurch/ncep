@@ -45,7 +45,6 @@ def map_depart_from_normal_temps(date_start, date_end, begin_normal_year,
     ax.set_extent([-124.5,-64,21.3,49], ccrs.Geodetic())
     plt.margins(0,0)
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-    plt.tight_layout()
     reader_state = Reader(STATE_SHAPEFILE_PATH+STATE_SHAPEFILE_FNAME)
     reader_how = Reader(ATTRIBUTE_DICT[how][1])
     dfn_temps = ncep_util.depart_from_normal_temps(date_start, date_end, begin_normal_year, 
@@ -123,7 +122,6 @@ def map_compare_average_temps(date_start, date_end, date_start_compare, date_end
     ax.set_extent([-124.5,-64,21.3,49], ccrs.Geodetic())
     plt.margins(0,0)
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-    plt.tight_layout()
     reader_state = Reader(STATE_SHAPEFILE_PATH+STATE_SHAPEFILE_FNAME)
     reader_how = Reader(ATTRIBUTE_DICT[how][1])
     df = ncep_util.compare_average_temps(date_start, date_end, date_start_compare, date_end_compare, email,how)
@@ -197,7 +195,6 @@ def map_average_temps(date_start,date_end,email,split_on = 65,how='stcd',legend=
     ax.set_extent([-124.5,-64,21.3,49], ccrs.PlateCarree())
     plt.margins(0,0)
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-    plt.tight_layout()
     reader_state = Reader(STATE_SHAPEFILE_PATH+STATE_SHAPEFILE_FNAME)
     reader_how = Reader(ATTRIBUTE_DICT[how][1])
     df_temps = ncep_util.average_temps(date_start, date_end,email,how=how)

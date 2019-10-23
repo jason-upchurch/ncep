@@ -140,7 +140,7 @@ def _retrieve_forecast_range(fname,date_start,date_end,email):
             continue
     df.index = pd.to_datetime(df.index,format='%Y%m%d')
     df = df[~df.index.duplicated(keep='last')]
-    return df.ix[date_start:date_end]
+    return df.loc[date_start:date_end]
       
 def _retrieve_history_range(fname,date_start,date_end,email):
     if date_start > date_end:
@@ -159,7 +159,7 @@ def _retrieve_history_range(fname,date_start,date_end,email):
     for year in range(date_start.year+1,date_end.year+1):
         df_tmp = df_tmp.append(degree_day_history(fname,year),sort=True)
     df_tmp.index=df_tmp.index.date
-    return df_tmp.ix[df.index[0]:df.index[-1]]        
+    return df_tmp.loc[df.index[0]:df.index[-1]]        
  
 def date_in_history(fname,date): 
     try:
