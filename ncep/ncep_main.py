@@ -34,10 +34,9 @@ the png that are saved. Do not provide an extension--both files will get
 the same name with csv and png extensions.
 '''
 # fname1 = 'average_temps'
-# savepath = path+fname1
 # date_start = datetime(2019,1,29).date() #provide a valid start date YYYY, (M)M, (D)D
 # date_end = datetime(2019,2,2).date()  #provide a valid start date YYYY, (M)M, (D)D
-# plt_average_temps = ncep_mapping.map_average_temps(date_start, date_end,email,
+# plt_average_temps = ncep_mapping.map_average_temps(date_start, date_end, '',
 #                                       split_on = 55,how='state',legend=True,savepath=False)
 # plt_average_temps.show()
 
@@ -69,7 +68,7 @@ map departure from normal temps
 # begin_normal_year, end_normal_year = 1981, 2010
 # plt_depart_from_normal = ncep_mapping.map_depart_from_normal_temps(
 #                             date_start, date_end, begin_normal_year, end_normal_year,
-#                             email,how='state', legend = True, savepath=False)
+#                             '', how='state', legend = True, savepath=False)
 # plt_depart_from_normal.show()
  
  
@@ -82,5 +81,5 @@ advanced: get range of heating degree days for state (illustrates interaction wi
 # date_start = datetime(2016,1,1).date()
 # date_end = datetime(2016,12,31).date()
 # HDD_FNAME_STATE = 'StatesCONUS.Heating.txt'
-# hdd = ncep_util.retrieve_range(HDD_FNAME_STATE, date_start, date_end, email)
+# hdd = ncep_util.retrieve_range(HDD_FNAME_STATE, date_start, date_end, '')
 # hdd.to_csv(path+fname4)
