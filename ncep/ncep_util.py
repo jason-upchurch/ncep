@@ -268,7 +268,7 @@ def compare_average_temps(date_start, date_end, date_start_compare, date_end_com
 def average_temps(date_start,date_end,email,how='stcd'):
     df_cdd = average_dd(AGG_DICT[how][0],date_start,date_end,email)
     df_hdd = average_dd(AGG_DICT[how][1],date_start,date_end,email)
-    df = 65+df_cdd-df_hdd
+    df = 65+df_cdd*(df_cdd/(df_cdd+df_hdd))-df_hdd*(df_hdd/(df_hdd+df_cdd))
     df = pd.DataFrame(df)
     df.index = [str(date_start)+' to '+str(date_end)]
     return df
