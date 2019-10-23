@@ -19,3 +19,4 @@
 - `cd ncep/ncep/`
 - `python ncep_main.py`
 
+![image](https://user-images.githubusercontent.com/49287206/67347675-cd0d6600-f510-11e9-8e8c-d1cd902a21d3.png)
