@@ -32,8 +32,13 @@ fname is the filename you wish to save as (this will apply to the csv and
 the png that are saved. Do not provide an extension--both files will get
 the same name with csv and png extensions.
 '''
+# fname1 = 'average_temps'
+# date_start = datetime(2019,1,29).date() #provide a valid start date YYYY, (M)M, (D)D
+# date_end = datetime(2019,2,2).date()  #provide a valid start date YYYY, (M)M, (D)D
+# plt_average_temps = ncep_mapping.map_average_temps(date_start, date_end, '',
+#                                       split_on = 55,how='state',legend=True,savepath=False)
+# plt_average_temps.show()
 
-    #return render_template('index.html', plt=myimg)
 
 
 '''
@@ -41,20 +46,6 @@ map compare average temps
 '''
 @app.route('/')
 def hello():
-
-    fname1 = 'average_temps'
-    date_starta = datetime(2019,1,29).date() #provide a valid start date YYYY, (M)M, (D)D
-    date_enda = datetime(2019,2,2).date()  #provide a valid start date YYYY, (M)M, (D)D
-    plt_average_temps = ncep_mapping.map_average_temps(date_starta, date_enda, '',
-                                          split_on = 55,how='state',legend=True,savepath=False)
-    #plt_average_temps.show()
-    imga = io.BytesIO()
-    plt_average_temps.savefig(imga, format='png')
-    imga.seek(0)
-
-    plot_url_avg = base64.b64encode(imga.getvalue()).decode()
-
-
     fname2 = 'compare_average_temps'
     savepath = True
     date_start = datetime(2018,1,1).date()
@@ -64,24 +55,19 @@ def hello():
     plt_compare = ncep_mapping.map_compare_average_temps(date_start, date_end, date_start_compare, date_end_compare,
                     '', how='stcd',legend = True)
     #plt_compare.show()
-
-
     img = io.BytesIO()
     plt_compare.savefig(img, format='png')
     img.seek(0)
 
     plot_url = base64.b64encode(img.getvalue()).decode()
 
-
     #myimg = '<img src="data:image/png;base64,{}">'.format(plot_url)
     return '<h3><a href="https://github.com/jason-upchurch/ncep/">https://github.com/jason-upchurch/ncep/develop/ncep</a></h3> \
-           <p style="float:left; width:50%; text-align:center">{} to {} </p> \
-           <p style="float:left; width:50%; text-align:center">{} to {} \
+           <p>{} to {} \
            <br> Compared to: \
            <br> {} to {}\
-           </p> \
-           <img src="data:image/png;base64,{}" style="border: 2px solid #ccc; width: 45%; padding-right: 25px;border-radius: 6px;float:left"> \
-           <img src="data:image/png;base64,{}" style="border: 2px solid #ccc; width: 45%; padding-right: 25px;border-radius: 6px;">'.format(date_starta, date_enda, date_start, date_end, date_start_compare, date_end_compare,plot_url_avg, plot_url)
+           </p>\
+           <img src="data:image/png;base64,{}" style="width:75%">'.format(date_start, date_end, date_start_compare, date_end_compare, plot_url)
     #return render_template('index.html', plt=myimg)
 
 
