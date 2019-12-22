@@ -5,19 +5,25 @@
 #    pip-compile --output-file=requirements.txt requirements.in
 #
 cartopy==0.17.0
+click==7.0                # via flask
 cycler==0.10.0            # via matplotlib
+flask==1.1.1
+itsdangerous==1.1.0       # via flask
+jinja2==2.10.3            # via flask
 kiwisolver==1.1.0         # via matplotlib
+markupsafe==1.1.1         # via jinja2
 matplotlib==3.1.1
 mpmath==1.1.0
-numpy==1.17.2             # via cartopy, matplotlib, pandas, scipy
+numpy==1.18.0             # via cartopy, matplotlib, pandas, scipy
 pandas==0.25
-pyparsing==2.4.2          # via matplotlib
+pyparsing==2.4.5          # via matplotlib
 pyshp==2.1.0              # via cartopy
-python-dateutil==2.8.0    # via matplotlib, pandas
-pytz==2019.2              # via pandas
+python-dateutil==2.8.1    # via matplotlib, pandas
+pytz==2019.3              # via pandas
 scipy==1.3.1
 shapely==1.6.4.post2      # via cartopy
-six==1.12.0               # via cartopy, cycler, python-dateutil
+six==1.13.0               # via cartopy, cycler, python-dateutil
+werkzeug==0.16.0          # via flask
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.2.0        # via cartopy, kiwisolver
+# setuptools==42.0.2        # via cartopy, kiwisolver
